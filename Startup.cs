@@ -12,7 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
-using farmaciaJaveriana.Controllers.Data;
+using farmaciaJaveriana.Models;
 
 namespace farmaciaJaveriana
 {
@@ -30,11 +30,11 @@ namespace farmaciaJaveriana
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<FarmaciaDbContext>(options =>
+            services.AddDbContext<FarmaciaContext>(options =>
             options.UseSqlServer(
             Configuration.GetConnectionString("DefaultConnection")));
             services.AddIdentityCore<IdentityUser>()          
-                .AddEntityFrameworkStores<FarmaciaDbContext>();
+                .AddEntityFrameworkStores<FarmaciaContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
