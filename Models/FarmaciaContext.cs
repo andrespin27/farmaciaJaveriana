@@ -28,14 +28,14 @@ namespace farmaciaJaveriana.Models
         public virtual DbSet<SolicitudDespachoTercero> SolicitudDespachoTerceros { get; set; }
         public virtual DbSet<Tercero> Terceros { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    if (!optionsBuilder.IsConfigured)
+        //    {
 
-                optionsBuilder.UseSqlServer("Server=.\\APINEDA;Database=Farmacia;User Id=sa;Password=Perseo5581;");
-            }
-        }
+        //        optionsBuilder.UseSqlServer("Server=.\\APINEDA;Database=Farmacia;User Id=sa;Password=Perseo5581;");
+        //    }
+        //}
 
         //Scaffold-DbContext "Server=.\APINEDA;Database=Farmacia;User Id=sa;Password=Perseo5581;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
 
